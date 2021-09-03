@@ -13,11 +13,11 @@ game_state = "running"
 
 # setting the name and icon of the display
 pygame.display.set_caption("Space Wars")  # setting the title of the game
-icon = pygame.image.load('ufo.png')  # loading the icon
+icon = pygame.image.load('images\\ufo.png')  # loading the icon
 pygame.display.set_icon(icon)  # setting the icon for the display
 
 # for player
-playerImg = pygame.image.load('SpaceShip.png')
+playerImg = pygame.image.load('images\SpaceShip.png')
 playerX = 400
 playerY = 500
 playerXchange = 0
@@ -25,12 +25,12 @@ playerYchange = 0
 
 # for Enemies(six in total)
 enemyImg = []
-enemyImg.append(pygame.image.load('enemy1.png'))
-enemyImg.append(pygame.image.load('enemy2.png'))
-enemyImg.append(pygame.image.load('enemy3.png'))
-enemyImg.append(pygame.image.load('enemy4.png'))
-enemyImg.append(pygame.image.load('enemy5.png'))
-enemyImg.append(pygame.image.load('enemy6.png'))
+enemyImg.append(pygame.image.load('images\enemy1.png'))
+enemyImg.append(pygame.image.load('images\enemy2.png'))
+enemyImg.append(pygame.image.load('images\enemy3.png'))
+enemyImg.append(pygame.image.load('images\enemy4.png'))
+enemyImg.append(pygame.image.load('images\enemy5.png'))
+enemyImg.append(pygame.image.load('images\enemy6.png'))
 enemyX = []
 enemyY = []
 
@@ -44,7 +44,7 @@ enemyXchange = [0.5 for i in range(6)]
 enemyYchange = [64 for i in range(6)]
 
 # for bullet pair
-bulletImg = pygame.image.load('bulletpair.png')
+bulletImg = pygame.image.load('images\\bulletpair.png')
 # bullet will start from the player's place
 bulletX = playerX
 bulletY = playerY
@@ -75,10 +75,10 @@ def are_colliding(x1, y1, x2, y2):  # coordinate of enemy(x1, y1) and bullet obj
 
 
 # Background Image
-Galaxy = pygame.image.load("galaxy.png")
+Galaxy = pygame.image.load("images\galaxy.png")
 
 # Background music
-mixer.music.load('backgroundmusic.mp3')
+mixer.music.load('audio\\backgroundmusic.mp3')
 mixer.music.play(-1)
 
 
@@ -135,7 +135,7 @@ while game_state == "running":
 
             if event.key == pygame.K_SPACE:
                 if bullet_state == "reloading":
-                    bullet_sound = mixer.Sound('shooting.wav')
+                    bullet_sound = mixer.Sound('audio\shooting.wav')
                     bullet_sound.play()  # background sound for the music
                     bulletX = playerX
                     fire_bullet(bulletX, bulletY)
@@ -181,7 +181,7 @@ while game_state == "running":
         collide = are_colliding(enemyX[i], enemyY[i], bulletX, bulletY)
         if collide:
             # collision sound upon collision
-            collision_sound = mixer.Sound('explosion.wav')
+            collision_sound = mixer.Sound('audio\explosion.wav')
             collision_sound.play()
             game_score += 1
             bulletYchange = 0  # No change in the bullet along y axis now
