@@ -1,7 +1,9 @@
 # SPACE-WARS
 
 ***Space-Wars View on Game Screen***
-!["Game View"](images\Game_view.png "User View experience ")
+
+!["Game View"](https://github.com/proacher/SPACE-WARS/blob/main/images/Game_view.png "User View experience ")
+
 You are given the basic funtionality like shooting  the enemy and moving left or right.
 There are 6 enemies that are constantly attacking you.
 They try to reach your home by moving in the zig-zag fashion. 
